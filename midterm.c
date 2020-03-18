@@ -96,3 +96,37 @@ double square_area(square* sq){
   double length =  sq->ul.x;
   return length * length;
 }
+double square_perimeter(square* r); {
+    double length =  sq->ul.x;
+    return length * 4;
+}
+// print location, side, area and perimeter
+
+void square_print(square* sq){
+  double length =  sq->ul.x;
+  double area = length * legnth;
+  double perimeter = 4 * length;
+  printf("side is %s\n", length);
+  printf("area is %s\n", area);
+  printf("perimeter is %s\n", perimeter);
+  printf("location is at %s and %s", sq->ul.x, sq->ul.y);
+}
+void test_square(double ulx, double uly, double side) {
+ square* sq = square_init(ulx, uly, side);
+ square_print(“sq is: “, sq);
+ square_move(2, 2);
+ square_print(“sq is now: “, sq);
+ square_expandby(sq, 10);
+ square_print(“sq has expanded to: “, sq);
+ square_delete(sq);
+ printf(“\n\n”);
+}
+void tests_square() {
+ test_square(0, 0, 10);
+ test_square(1, 1, 5);
+ // add other tests if you wish // TODO (optional)
+}
+int main(int argc, const char* argv[]) {
+ tests_square();
+ return 0;
+}
